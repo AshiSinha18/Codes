@@ -18,6 +18,10 @@ public class Snakeladderwithsnakeandladder {
 			return IsvalidPath(snl[curr],end,snl,dices,dvidx);
 			
 		}
+		else if(curr+dices[dvidx]<=end)
+		{
+			return IsvalidPath(curr+dices[dvidx], end, snl, dices, dvidx+1);
+		}
 		else
 		{
 			return IsvalidPath(curr, end, snl, dices, dvidx+1);

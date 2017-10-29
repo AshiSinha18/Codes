@@ -45,6 +45,9 @@ public class Mergelistsusingpriorityqueue {
 			this.ino = ino;
 		}
 
+		public int compareTo(Pair o) {
+			return this.data - o.data;
+		}
 	}
 
 	public static ArrayList<Integer> mergeksortedlists(ArrayList<ArrayList<Integer>> lists) {
@@ -56,6 +59,10 @@ public class Mergelistsusingpriorityqueue {
 			Pair rp = pq.remove();
 			merged.add(rp.data);
 			rp.ino++;
+			if (rp.ino < lists.get(rp.lno).size()) {
+				rp.data = lists.get(rp.lno).get(rp.ino);
+				pq.add(rp);
+			}
 		}
 		return merged;
 
