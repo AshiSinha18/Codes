@@ -19,6 +19,10 @@ public class getlargestkelements {
 		public Pair(int data) {
 			this.data = data;
 		}
+
+		public int compareTo(Pair o) {
+			return this.data - o.data;
+		}
 	}
 
 	public static ArrayList<Integer> getLargestK(int arr[], int k) {
@@ -37,6 +41,11 @@ public class getlargestkelements {
 				pq.add(rp);
 			}
 		}
+		while (pq.size() != 0) {
+			Pair rp = pq.remove();
+			final1.add(rp.data);
+		}
+		return final1;
 	}
 
 }
