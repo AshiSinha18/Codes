@@ -17,5 +17,9 @@ public class Subsetswithtarget {
     		}
     		return;
     	}
+
+		// Added printing step
+     	printTargetSS(arr, vidx+1, tar-arr[vidx], ans+arr[vidx]);
+    	printTargetSS(arr, vidx+1, tar, ans);
     }
 }
